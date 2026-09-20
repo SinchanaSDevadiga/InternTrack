@@ -2,6 +2,8 @@
 
 ### Your internship journey, organized.
 
+![InternTrack Preview](interntrack-preview.png)
+
 InternTrack is a web-based internship application tracker designed to help students manage their internship applications, deadlines, interviews, and selection status in one place.
 
 ## ✨ Features
