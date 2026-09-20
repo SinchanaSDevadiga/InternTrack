@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>InternTrack</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+
+        <div class="logo">
+            🚀 InternTrack
+        </div>
+
+        <div class="nav-links">
+            <a href="#dashboard">Dashboard</a>
+            <a href="#applications">Applications</a>
+            <a href="#deadlines">Deadlines</a>
+            <a href="#about">About</a>
+        </div>
+
+        <div class="nav-actions">
+
+            <button
+                type="button"
+                class="add-btn"
+                onclick="openForm()">
+                + Add Application
+            </button>
+
+            <button
+                type="button"
+                class="export-btn"
+                onclick="exportApplications()">
+                ⬇️ Export CSV
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Hero -->
+    <header class="hero">
+
+        <h1>InternTrack</h1>
+
+        <p>
+            Your internship journey, organized.
+        </p>
+
+    </header>
+
+
+    <main>
+
+        <!-- Dashboard -->
+        <section
+            id="dashboard"
+            class="dashboard-section">
+
+            <div class="welcome-box">
+
+                <h2>
+                    Welcome to InternTrack 👋
+                </h2>
+
+                <p>
+                    Track your internship applications,
+                    interviews and deadlines in one place.
+                </p>
+
+            </div>
+
+
+            <!-- Upcoming Deadline -->
+            <div
+                id="upcomingDeadline"
+                class="upcoming-deadline">
+            </div>
+
+
+            <!-- Statistics -->
+            <div class="stats-container">
+
+                <div class="stat-card">
+
+                    <h3>
+                        Applications
+                    </h3>
+
+                    <span id="applicationCount">
+                        0
+                    </span>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <h3>
+                        Interviews
+                    </h3>
+
+                    <span id="interviewCount">
+                        0
+                    </span>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <h3>
+                        Selected
+                    </h3>
+
+                    <span id="selectedCount">
+                        0
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Applications -->
+        <section
+            id="applications"
+            class="info-section">
+
+            <div class="section-heading">
+
+                <h2>
+                    My Applications
+                </h2>
+
+
+                <div class="application-controls">
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="🔍 Search company or role..."
+                        oninput="searchApplications()">
+
+
+                    <select
+                        id="statusFilter"
+                        onchange="filterApplications()">
+
+                        <option value="All">
+                            All Statuses
+                        </option>
+
+                        <option value="Applied">
+                            Applied
+                        </option>
+
+                        <option value="Interview">
+                            Interview
+                        </option>
+
+                        <option value="Selected">
+                            Selected
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div id="applicationList"></div>
+
+        </section>
+
+
+        <!-- Deadlines -->
+        <section
+            id="deadlines"
+            class="info-section">
+
+            <h2>
+                Deadlines
+            </h2>
+
+            <p>
+                Keep track of your upcoming internship deadlines.
+            </p>
+
+            <div id="deadlineList"></div>
+
+        </section>
+
+
+        <!-- About -->
+        <section
+            id="about"
+            class="info-section">
+
+            <h2>
+                About InternTrack
+            </h2>
+
+            <p>
+                InternTrack is a simple internship management
+                website that helps students organize applications,
+                interviews, deadlines and selections in one place.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- Application Form -->
+    <div
+        id="applicationForm"
+        class="form-overlay">
+
+        <div class="form-box">
+
+            <button
+                type="button"
+                class="close-btn"
+                onclick="closeForm()">
+                ✕
+            </button>
+
+
+            <h2 id="formTitle">
+                Add Application
+            </h2>
+
+
+            <label>
+                Company Name
+            </label>
+
+            <input
+                type="text"
+                id="company"
+                placeholder="Example: Microsoft">
+
+
+            <label>
+                Internship Role
+            </label>
+
+            <input
+                type="text"
+                id="role"
+                placeholder="Example: Web Development">
+
+
+            <label>
+                Status
+            </label>
+
+            <select id="status">
+
+                <option value="Applied">
+                    Applied
+                </option>
+
+                <option value="Interview">
+                    Interview
+                </option>
+
+                <option value="Selected">
+                    Selected
+                </option>
+
+            </select>
+
+
+            <label>
+                Deadline
+            </label>
+
+            <input
+                type="date"
+                id="deadline">
+
+
+            <button
+                type="button"
+                id="submitButton"
+                class="submit-btn"
+                onclick="saveApplication()">
+
+                Add Application
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <footer>
+
+        <p>
+            © 2026 InternTrack | Built by Sinchana S Devadiga
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
